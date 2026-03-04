@@ -66,7 +66,7 @@ if (options == pin) {
         Amount: amount
       }
     )
-   const filteredTransaction =  Transactions.map(transaction => transaction.Amount >= 500 && transaction.Date);
+   const filteredTransaction =  Transactions.filter(transaction => transaction.Amount >= 500 && transaction.sender);
    console.log(filteredTransaction);
       console.log(Transactions);
       balance -= amount;
