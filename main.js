@@ -5,7 +5,7 @@ let option2 = "1. itus haraagaaga \n";
 let option3 = "2. U wareeji \n";
 let option4 = "3. Kaarka ku hadalka \n";
 let option5 = "5. Salaam Bank \n";
-let option6 = '6. Ka bax'
+let option6 = "6. Ka bax";
 
 const options = Number(prompt("fadlan geli pinkaaga"));
 
@@ -18,7 +18,7 @@ if (options == pin) {
         option3 +
         option4 +
         option5 +
-        option6
+        option6,
     ),
   );
   if (choice === 1) {
@@ -43,30 +43,46 @@ if (options == pin) {
           balance,
       );
     }
-  }else if(choice === 3) {
-    const recipent = prompt('fadlan geli lambarka aad u rabtid in aad ku shubto kaarka ku hadalka');
-    const amount = Number(prompt('fadlan geli lacagta saxda ah'));
-    if(amount > balance) {
-        alert('ma haysatid lacag kugu filan');
-    }else if(amount <= 0) {
-        alert('fadlan geli lacgta saxda ah');
-    }else {
-        balance -= amount;
-        alert('waxaad $' + amount + "kaar ku hadal ugu shubtay" + recipent + '\n Haraagaagu waa $'+balance);
+  } else if (choice === 3) {
+    const recipent = prompt(
+      "fadlan geli lambarka aad u rabtid in aad ku shubto kaarka ku hadalka",
+    );
+    const amount = Number(prompt("fadlan geli lacagta saxda ah"));
+    if (amount > balance) {
+      alert("ma haysatid lacag kugu filan");
+    } else if (amount <= 0) {
+      alert("fadlan geli lacgta saxda ah");
+    } else {
+      balance -= amount;
+      alert(
+        "waxaad $" +
+          amount +
+          "kaar ku hadal ugu shubtay" +
+          recipent +
+          "\n Haraagaagu waa $" +
+          balance,
+      );
     }
-  }else if(choice === 4) {
-        const bankAmount = Number(prompt("Geli lacagta aad u wareejinayso Salaam Bank:"));
-        if(bankAmount > balance) {
-            alert('koontadaada kugu ma filna');
-        }else if (bankAmount <=0) {
-            alert('fadlan dir lacagta saxda ah');
-        }else {
-            balance -= bankAmount;
-             alert("Waxaad $" + bankAmount + " u wareejisay Salaam Bank" +
-                      "\nHaraagaagu waa: $" + balance);
-        }
-  }else if(choice === 0) {
-    alert('Mahadsanid isticmaalka EVC-PLUS');
+  } else if (choice === 4) {
+    const bankAmount = Number(
+      prompt("Geli lacagta aad u wareejinayso Salaam Bank:"),
+    );
+    if (bankAmount > balance) {
+      alert("koontadaada kugu ma filna");
+    } else if (bankAmount <= 0) {
+      alert("fadlan dir lacagta saxda ah");
+    } else {
+      balance -= bankAmount;
+      alert(
+        "Waxaad $" +
+          bankAmount +
+          " u wareejisay Salaam Bank" +
+          "\nHaraagaagu waa: $" +
+          balance,
+      );
+    }
+  } else if (choice === 0) {
+    alert("Mahadsanid isticmaalka EVC-PLUS");
   }
 } else {
   alert("fadlan geli pinkaaga saxda ah");
